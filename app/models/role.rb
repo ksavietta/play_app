@@ -26,7 +26,6 @@ class Role < ActiveRecord::Base
     if self.number_of_scences_role_appears == nil
       role_scene_count = 1
       self.play.doc.xpath("//SCENE").each do |scene_doc|
-        "PLACEHOLDER"
       end
 
      self.number_of_scences_role_appears = role_scene_count
@@ -42,5 +41,5 @@ class Role < ActiveRecord::Base
       self.percent_total_scenes
     end
   end
-
 end
+

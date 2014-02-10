@@ -2,22 +2,22 @@
 
 <TABLE>
   <tr>
-    <th>Role</th>
+    <th><%= link_to "Role", sort: "name"%></th>
     <th><%= link_to "Number of Lines", sort: "number_of_lines_spoken"%></th>
-    <th><%= link_to "Number of Scenes", sort: "number_of_scenes_role_appears"%></th>
+    <th><%= link_to "Number of Scenes", sort: "number_of_scences_role_appears"%></th>
     <th><%= link_to "Percent Total Scenes", sort: "percent_total_scenes"%></th>
     <th><%= link_to "Longest Speech", sort: "longest_speech"%></th>
   </tr>
 
-<% @play.display_roles.each do |role| %>
-  <tr>
-    <th><%=role.name%></th>
-    <td><%=role.num_lines%></td>
-    <td><%=role.num_scenes%></td>
-    <td><%=role.percent_scenes.round(2)%>%</td>
-    <td><%=role.longest_speech%></td>
-  </tr>
-<% end %>
+  <% @roles.each do |role| %>
+    <tr>
+      <th><%=role.name.titleize%></th>
+      <td><%=role.num_lines%></td>
+      <td><%=role.num_scenes%></td>
+      <td><%=role.percent_scenes.round(2)%>%</td>
+      <td><%=role.longest_speech%></td>
+    </tr>
+  <% end %>
 
 </TABLE>
 
