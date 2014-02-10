@@ -2,11 +2,11 @@
 
 <TABLE>
   <tr>
-    <th><%= link_to "Role", sort: "name"%></th>
-    <th><%= link_to "Number of Lines", sort: "number_of_lines_spoken"%></th>
-    <th><%= link_to "Number of Scenes", sort: "number_of_scences_role_appears"%></th>
-    <th><%= link_to "Percent Total Scenes", sort: "percent_total_scenes"%></th>
-    <th><%= link_to "Longest Speech", sort: "longest_speech"%></th>
+    <th><%= sortable "name", "Role"%></th>
+    <th><%= sortable "number_of_lines_spoken", "Number of Lines"%></th>
+    <th><%= sortable "number_of_scences_role_appears", "Number of Scenes"%></th>
+    <th><%= sortable "percent_total_scenes", "Percent Total Scenes"%></th>
+    <th><%= sortable "longest_speech", "Longest Speech"%></th>
   </tr>
 
   <% @roles.each do |role| %>

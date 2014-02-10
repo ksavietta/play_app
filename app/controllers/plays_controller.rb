@@ -7,7 +7,7 @@ class PlaysController<ApplicationController
 
   def show
     @play = Play.find(params[:id])
-    @roles = Role.order(params[:sort])
+    @roles = Role.order(params[:sort] + ' ' + params[:direction])
   end
 
   def create
