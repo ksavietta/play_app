@@ -1,0 +1,43 @@
+<%= @play.name %>
+
+<TABLE>
+  <tr>
+    <th>Role</th>
+    <th><%= link_to "Number of Lines", sort: "number_of_lines_spoken"%></th>
+    <th><%= link_to "Number of Scenes", sort: "number_of_scenes_role_appears"%></th>
+    <th><%= link_to "Percent Total Scenes", sort: "percent_total_scenes"%></th>
+    <th><%= link_to "Longest Speech", sort: "longest_speech"%></th>
+  </tr>
+
+<% @play.display_roles.each do |role| %>
+  <tr>
+    <th><%=role.name%></th>
+    <td><%=role.num_lines%></td>
+    <td><%=role.num_scenes%></td>
+    <td><%=role.percent_scenes%></td>
+    <td><%=role.longest_speech%></td>
+  </tr>
+<% end %>
+
+</TABLE>
+
+
+
+<br><br><br><br>
+
+
+The table should show the following
+statistics for each role in the play: number of lines spoken, longest
+speech, number of scenes in which the role appears, and percent of total
+scenes in which the role appears.
+
+
+
+
+
+
+
+
+
+
+<%= link_to 'Back', root_path %>

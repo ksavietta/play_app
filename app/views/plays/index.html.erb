@@ -1,0 +1,21 @@
+<h1>Hello</h1>
+
+<%= form_for @play, :html => {multipart:true} do |f| %>
+  <p>
+    <%=f.label :name%> <br>
+    <%=f.text_field :name%>
+  </p>
+
+  <p>
+    <%= f.file_field :xml %>
+  </p>
+
+  <p>
+    <%=f.submit "Submit" %>
+  </p>
+<% end %>
+
+
+<% @plays.each do |play| %>
+  <%= play.name %>
+<% end %>
