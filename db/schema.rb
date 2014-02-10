@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209232217) do
+ActiveRecord::Schema.define(version: 20140210204020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140209232217) do
     t.datetime "xml_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "scene_count",      default: 0
   end
 
   create_table "roles", force: true do |t|
@@ -31,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140209232217) do
     t.integer  "number_of_lines_spoken"
     t.integer  "longest_speech"
     t.integer  "number_of_scences_role_appears"
-    t.integer  "percent_total_scenes"
+    t.decimal  "percent_total_scenes"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "play_id",                        null: false

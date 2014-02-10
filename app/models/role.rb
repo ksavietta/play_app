@@ -24,29 +24,20 @@ class Role < ActiveRecord::Base
 
   def num_scenes
     if self.number_of_scences_role_appears == nil
-     scene_count = 0
-     self.play.doc.xpath("//SCENE").each do |scene_doc|
-      scene_count +=1
+      role_scene_count = 1
+      self.play.doc.xpath("//SCENE").each do |scene_doc|
+        "PLACEHOLDER"
+      end
 
-     end
-
-     self.number_of_scences_role_appears = scene_count
+     self.number_of_scences_role_appears = role_scene_count
     else
       self.number_of_scences_role_appears
     end
   end
 
-  # def long_speech
-  #   if self.longest_speech == nil
-  #     self.longest_speech = 1
-  #   else
-  #     self.longest_speech
-  #   end
-  # end
-
   def percent_scenes
     if self.percent_total_scenes == nil
-     self.percent_total_scenes = 1
+      self.percent_total_scenes = (self.number_of_scences_role_appears*100.00)/self.play.scene_count
     else
       self.percent_total_scenes
     end

@@ -17,5 +17,5 @@
 
 
 <% @plays.each do |play| %>
-  <%= play.name %>
+  <%= link_to play.name, play_path(play) %>
 <% end %>

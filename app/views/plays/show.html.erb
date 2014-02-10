@@ -14,14 +14,12 @@
     <th><%=role.name%></th>
     <td><%=role.num_lines%></td>
     <td><%=role.num_scenes%></td>
-    <td><%=role.percent_scenes%></td>
+    <td><%=role.percent_scenes.round(2)%>%</td>
     <td><%=role.longest_speech%></td>
   </tr>
 <% end %>
 
 </TABLE>
-
-
 
 <br><br><br><br>
 

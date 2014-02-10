@@ -11,7 +11,7 @@ class Play < ActiveRecord::Base
 
   has_attached_file :xml
 
-  attr_reader :scene_count, :doc
+  attr_reader :doc
 
   def display_roles
     self.roles.take(10)
@@ -40,7 +40,7 @@ class Play < ActiveRecord::Base
   end
 
   def count_num_scenes
-    @scene_count = @doc.xpath("//SCENE").count
+    self.scene_count = @doc.xpath("//SCENE").count
   end
 
   def run_role_stats
