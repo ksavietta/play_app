@@ -1,4 +1,5 @@
 class PlaysController<ApplicationController
+  helper_method :sort_column, :sort_direction
 
   def index
     @plays = Play.all
@@ -7,7 +8,7 @@ class PlaysController<ApplicationController
 
   def show
     @play = Play.find(params[:id])
-    @roles = Role.order(params[:sort] + ' ' + params[:direction])
+    @roles = @play.roles.order(sort_column + ' ' + sort_direction)
   end
 
   def create
@@ -25,6 +26,15 @@ class PlaysController<ApplicationController
 
   def play_params
     params.require(:play).permit(:name, :xml)
+  end
+
+  # helper methods for default sort A-Z on role name
+  def sort_column
+    params[:sort] || "name"
+  end
+
+  def sort_direction
+    params[:direction] || "asc"
   end
 
 end
