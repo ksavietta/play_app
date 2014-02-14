@@ -30,11 +30,12 @@ class PlaysController<ApplicationController
 
   # helper methods for default sort A-Z on role name
   def sort_column
-    params[:sort] || "name"
+    Role.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
 
+  # sanitizing data to prevent SQL injection. Is direction "asc" or "desc"?
   def sort_direction
-    params[:direction] || "asc"
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
 end

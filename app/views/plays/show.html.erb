@@ -1,8 +1,9 @@
 <%= @play.name %>
 
-<TABLE>
+<TABLE class="role-table">
   <tr>
-    <th><%= sortable "name", "Role"%></th>
+    <th><%= sortable "name", "Role"%>    <i class='fi-arrow-up large'></i>
+</th>
     <th><%= sortable "number_of_lines_spoken", "Number of Lines"%></th>
     <th><%= sortable "number_of_scences_role_appears", "Number of Scenes"%></th>
     <th><%= sortable "percent_total_scenes", "Percent Total Scenes"%></th>
@@ -28,9 +29,6 @@ The table should show the following
 statistics for each role in the play: number of lines spoken, longest
 speech, number of scenes in which the role appears, and percent of total
 scenes in which the role appears.
-
-
-
 
 
 

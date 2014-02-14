@@ -35,6 +35,9 @@ end
   gem 'paperclip', '~> 3.0'
   gem "nokogiri"
   gem 'simple_form'
+  gem 'foundation-rails'
+  gem 'foundation-icons-sass-rails'
+
 
 group :development, :test do
   gem 'pry-rails'
@@ -50,14 +53,3 @@ group :development, :test do
   gem 'binding_of_caller'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
